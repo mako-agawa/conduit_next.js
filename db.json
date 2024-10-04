@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "id": "2",
+      "title": "Second Post",
+      "subtitle": "Hello subtitle",
+      "body": "This is another post.",
+      "tag": "next.js",
+      "user_id": 1
+    },
+    {
+      "id": "3",
+      "title": "test241003",
+      "subtitle": "test",
+      "body": "新規投稿のテストをしています。",
+      "tag": "react",
+      "user_id": "1"
+    },
+    {
+      "id": "71a9",
+      "title": "aaaa",
+      "subtitle": "bbbb",
+      "body": "ccccccccccc",
+      "tag": "dd",
+      "user_id": "1"
+    }
+  ]
+}

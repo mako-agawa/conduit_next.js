@@ -3,7 +3,7 @@
 ## 起動方法！
 1. npm run dev でフロント側をlocalhost:3000で立ち上げます。
 
-2. 前回まで作成した[Rails API]()は
+2. 前回まで作成した[Rails API](https://github.com/mako-agawa/conduit_myrails)は
 ``rails s -p 3001``で起動し、<br>3001番ポートで起動してください。
 
 ## 各機能を実装したページへのリンク
