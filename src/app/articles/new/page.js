@@ -5,12 +5,23 @@ import { useRouter } from "next/navigation";
 export default function ArticleForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);  // エラーメッセージ用のステート
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const handleSubmit = async (e) => {  // 型アノテーションを削除
     e.preventDefault();
     setLoading(true);
+    setError(null);  // エラーメッセージをリセット
+
+    const bodyContent = e.target.body.value;
+    
+    // bodyの文字数チェック
+    if (bodyContent.length < 10) {
+      setError("Article body must be at least 10 characters.");
+      setLoading(false);
+      return;
+    }
     try {
       const res = await fetch(`${API_URL}`, {
         method: "POST",
@@ -41,6 +52,7 @@ export default function ArticleForm() {
   return (
     <div className="max-w-md mx-auto mt-12 p-4 border border-gray-300 rounded shadow-lg">
       <form onSubmit={handleSubmit} className="space-y-4">
+      {error && <p className="text-red-500 text-sm">{error}</p>}  {/* エラーメッセージ表示 */}
         <div>
           <input
             type="text"
